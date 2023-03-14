@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>parent</artifactId>
+        <groupId>com.leyou.parent</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.leyou.service</groupId>
+    <artifactId>leyou-item</artifactId>
+
+    <modules>
+        <module>leyou-item-interface</module>
+        <module>leyou-item-service</module>
+    </modules>
+
+    <!--
+    打包方式为pom的模块为父模块，用来管理子模块。 因此对父模块的maven命令会对其依赖的子模块若有依赖顺序
+    (子模块与子模块之间的依赖顺序)，按依赖顺序依次执行。 方便了项目的关联不需要一个一个模块进行同样的操作，
+    且具有很好的扩展性，可拆分性。 建议创建maven项目时，以聚合项目 (拥有父模块)为好。 为什么打包方式为war
+    包时会把pom文件中引用到第三方jar也包含进去，而打包方式为jar时就不会？ 打包方式为jar说明该模块最终只
+    会作为整个工程中的一部分即一个jar包。 打包方式为war说明该模块是整个工程的结束部分，会把其他模块都包含
+    进来形成一个完整的工程 (控制整个工程的目录层级关系)，故会把第三方引用到的jar也打进来。
+    -->
+    <packaging>pom</packaging>
+
+
+</project>
